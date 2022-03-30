@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Memo.Controls"
+             x:Class="Memo.HelpPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ContentView>
+        <Grid RowSpacing="25" RowDefinitions="*,9*"
+              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+
+<Label 
+x:Name="HintLabel"
+Text=""
+Grid.Row="0"
+HorizontalOptions="Center" />
+
+<controls:MemoBoard x:Name="Board" Grid.Row="1" />
+
+        </Grid>
+    </ContentView>
+</ContentPage>

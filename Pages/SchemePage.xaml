@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Memo.SchemePage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto"
+              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+
+<Label 
+Text="Select sound scheme"
+Grid.Row="0"
+Grid.Column="0"
+SemanticProperties.HeadingLevel="Level1"
+/>
+
+<CollectionView
+SelectionMode="Single"
+x:Name="SoundsView"
+Grid.Row="1"
+Grid.Column="0"
+SelectionChanged="OnSchemeSelected"
+>
+<CollectionView.ItemTemplate>
+<DataTemplate>
+<Label Text="{Binding .}" />
+</DataTemplate>
+</CollectionView.ItemTemplate>
+</CollectionView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

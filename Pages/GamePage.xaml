@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Memo.Controls"
+             x:Class="Memo.GamePage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ContentView>
+        <Grid RowSpacing="25" RowDefinitions="*,8*,*"
+              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+
+<Grid Grid.Row="0" ColumnDefinitions="*,*,*,*" HorizontalOptions="Center">
+<Label 
+x:Name="RoundLabel"
+Text=""
+Grid.Column="0"
+VerticalOptions="Center" />
+
+<Label 
+x:Name="CardsLabel"
+Text=""
+Grid.Column="1"
+VerticalOptions="Center" />
+
+<Label 
+x:Name="TimerLabel"
+Text=""
+Grid.Column="2"
+VerticalOptions="Center" />
+
+<Label 
+x:Name="PointsLabel"
+Text=""
+Grid.Column="3"
+VerticalOptions="Center" />
+</Grid>
+
+<controls:MemoBoard x:Name="Board" Grid.Row="1" />
+
+        </Grid>
+    </ContentView>
+</ContentPage>
