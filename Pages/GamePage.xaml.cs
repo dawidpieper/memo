@@ -110,13 +110,13 @@ case 4:
 StartGame(4, 4, 5, 60);
 break;
 case 5:
-StartGame(5, 5, 6, 75);
+StartGame(4, 5, 6, 75);
 break;
 case 6:
-StartGame(5, 5, 7, 75);
+StartGame(5, 5, 7, 90);
 break;
 case 7:
-StartGame(5, 5, 8, 90);
+StartGame(5, 5, 8, 100);
 break;
 case 8:
 Board.Paused=true;

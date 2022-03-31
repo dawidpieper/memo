@@ -9,7 +9,7 @@
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
 <Label 
-Text="Select sound scheme"
+Text="Wybierz schemat dźwiękowy"
 Grid.Row="0"
 Grid.Column="0"
 SemanticProperties.HeadingLevel="Level1"
