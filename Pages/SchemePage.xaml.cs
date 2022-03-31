@@ -11,7 +11,7 @@ namespace Memo {
 
 public partial class SchemePage : ContentPage {
 
-string[] SoundSchemes = {"birds", "piano"};
+string[] SoundSchemes = {"birds", "piano", "nokia"};
 
 	public SchemePage() {
 		InitializeComponent();
