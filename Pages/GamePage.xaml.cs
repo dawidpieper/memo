@@ -17,6 +17,7 @@ int Round=0;
 int Ticks=0;
 int Points=0;
 bool LastSuccess=false;
+bool Completed=false;
 
 string SoundsBase;
 
@@ -79,6 +80,7 @@ if(RemainingTime==0) {
 PlaySound("over");
 SemanticScreenReader.Announce("Koniec czasu!");
 Board.Paused=true;
+Completed=true;
 }
 }
 }
@@ -121,6 +123,7 @@ break;
 case 8:
 Board.Paused=true;
 RoundLabel.Text="Koniec gry";
+Completed=true;
 break;
 }
 SemanticScreenReader.Announce(RoundLabel.Text);
@@ -139,6 +142,22 @@ await Task.Delay(TimeSpan.FromMilliseconds(250));
 RemainingTime=time;
 SemanticScreenReader.Announce(RemainingTime.ToString()+" sek.");
 Board.Paused=false;
+}
+
+protected override bool OnBackButtonPressed(){
+if(!Completed) {
+MainThread.BeginInvokeOnMainThread(async () => {
+Board.Paused=true;
+var r = await DisplayAlert("Czy przerwać grę?", "Ta rozgrywka zostanie utracona.", "Tak", "Nie");
+Board.Paused=false;
+if(r) {
+base.OnBackButtonPressed();
+await Navigation.PopAsync();
+}
+});
+return true;
+} else
+return false;
 }
 }
 }

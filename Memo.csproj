@@ -9,7 +9,7 @@
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<!-- Display name -->
-		<ApplicationTitle>Memo</ApplicationTitle>
+		<ApplicationTitle>AudioMemo</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.dawidpieper.memo</ApplicationId>
@@ -31,10 +31,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#FCFCE4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#87CEFA" BaseSize="128,128" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
