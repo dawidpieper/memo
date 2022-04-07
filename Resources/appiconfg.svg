@@ -1,15 +1,7 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="50mm" height="50mm" viewBox="-25 -25 50 50" xmlns="http://www.w3.org/2000/svg" version="1.1">
-<title>OpenSCAD Model</title>
-<path d="
-M -18.0866,-15.3806 L -16.4645,-16.4645 L -15.3806,-18.0866 L -15,-20 L -15.3806,-21.9134 L -16.4645,-23.5355
- L -18.0866,-24.6194 L -20,-25 L -21.9134,-24.6194 L -23.5355,-23.5355 L -24.6194,-21.9134 L -25,-20
- L -24.6194,-18.0866 L -23.5355,-16.4645 L -21.9134,-15.3806 L -20,-15 z
-M 25,-25 L 15,-25 L 15,-15 L 25,-15 z
-M -15,15 L -25,15 L -25,25 L -15,25 z
-M 21.9134,24.6194 L 23.5355,23.5355 L 24.6194,21.9134 L 25,20 L 24.6194,18.0866 L 23.5355,16.4645
- L 21.9134,15.3806 L 20,15 L 18.0866,15.3806 L 16.4645,16.4645 L 15.3806,18.0866 L 15,20
- L 15.3806,21.9134 L 16.4645,23.5355 L 18.0866,24.6194 L 20,25 z
-" stroke="black" fill="lightgray" stroke-width="0.5"/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle cx="50" cy="50" r="40" fill="blue" />
+<rect width="80" height="80" x="10" y="110" fill="green" />
+<rect width="80" height="80" x="110" y="10" fill="yellow" />
+<circle cx="150" cy="150" r="40" fill="red" />
 </svg>

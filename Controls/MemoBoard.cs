@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Memo.Resources;
 
 namespace Memo.Controls {
 public class MemoBoard : ContentView {
@@ -96,7 +97,8 @@ grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitT
 for(int j=0; j<MemoHeight; ++j) {
 if(i==0) grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
 var b = new Button();
-b.Text=GetFieldLabel(i,j);
+SemanticProperties.SetDescription(b, GetFieldLabel(i,j));
+b.ImageSource = GetFieldImage(i,j);
 int x=i;
 int y=j;
 b.Clicked += (sender, e) => {
@@ -116,7 +118,11 @@ Rebuild();
 for(int i=0; i<MemoWidth; ++i)
 for(int j=0; j<MemoHeight; ++j)
 foreach(var c in grid.Children) {
-if(grid.GetRow(c)==i && grid.GetColumn(c)==j) ((Button)c).Text=GetFieldLabel(i,j);
+if(grid.GetRow(c)==i && grid.GetColumn(c)==j) {
+Button b = (Button)c;
+SemanticProperties.SetDescription(b, GetFieldLabel(i,j));
+b.ImageSource = GetFieldImage(i,j);
+}
 }
 }
 }
@@ -149,13 +155,22 @@ return false;
 public string GetFieldLabel(int x, int y) {
 string letter = ((char)('A'+x)).ToString();
 var sb = new StringBuilder();
-if(IsCardAt(x,y) && PickedCard!=(x,y)) sb.Append("Karta");
-else if(PickedCard==(x,y)) sb.Append("Podniesiona karta");
-else sb.Append("Puste");
+if(IsCardAt(x,y) && PickedCard!=(x,y)) sb.Append(AppResources.CardField);
+else if(PickedCard==(x,y)) sb.Append(AppResources.CardPickedField);
+else sb.Append(AppResources.EmptyField);
 sb.Append(": ");
 sb.Append(letter);
 sb.Append(y+1);
 return sb.ToString();
+}
+
+public ImageSource GetFieldImage(int x, int y) {
+if(IsCardAt(x,y) && PickedCard!=(x,y))
+return new FileImageSource{File = "field_card.svg"};
+else if(PickedCard==(x,y))
+return new FileImageSource{File = "field_cardpicked.svg"};
+else
+return new FileImageSource{File = "field_empty.svg"};
 }
 
 public bool AddCard(int x1, int y1, int x2, int y2, string sound) {

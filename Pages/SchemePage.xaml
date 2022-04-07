@@ -1,30 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:local="clr-namespace:Memo"
+xmlns:resources="clr-namespace:Memo.Resources"
+
              x:Class="Memo.SchemePage"
+Title="{x:Static resources:AppResources.SelectSoundSchemeTitle}"
              BackgroundColor="{DynamicResource SecondaryColor}">
 
     <ScrollView>
-        <Grid RowSpacing="25" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto"
+        <Grid RowSpacing="25" RowDefinitions="Auto" ColumnDefinitions="Auto"
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
-<Label 
-Text="Wybierz schemat dźwiękowy"
-Grid.Row="0"
-Grid.Column="0"
-SemanticProperties.HeadingLevel="Level1"
-/>
-
 <CollectionView
+ItemsLayout="VerticalGrid, 3"
 SelectionMode="Single"
 x:Name="SoundsView"
-Grid.Row="1"
+Grid.Row="0"
 Grid.Column="0"
 SelectionChanged="OnSchemeSelected"
 >
 <CollectionView.ItemTemplate>
-<DataTemplate>
-<Label Text="{Binding .}" />
+<DataTemplate x:DataType="local:SoundScheme">
+<Label>
+<Label.Style>
+<Style TargetType="Label">
+<Style.Triggers>
+<DataTrigger Binding="{Binding Available}" Value="False" TargetType="Label">
+<Setter Property="Text">
+<Setter.Value>
+<MultiBinding StringFormat="{}{0}&#x0a;{1}">
+<Binding Path="Name" />
+<Binding Source="{x:Static resources:AppResources.WinToUnlockLabel}"/>
+</MultiBinding>
+</Setter.Value>
+</Setter>
+</DataTrigger>
+<DataTrigger Binding="{Binding Available}" Value="True" TargetType="Label">
+<Setter Property="Text">
+<Setter.Value>
+<MultiBinding StringFormat="{}{0}&#x0a;{1}: {2}, {3}: {4}&#x0a;{5}: {6}, {7}: {8}&#x0a;{9}: {10}, {11}: {12}">
+<Binding Path="Name" />
+<Binding Source="{x:Static resources:AppResources.MaxPointsLabel}"/>
+<Binding Path="SchemeScore.Max" />
+<Binding Source="{x:Static resources:AppResources.AveragePointsLabel}"/>
+<Binding Path="SchemeScore.Average" />
+<Binding Source="{x:Static resources:AppResources.MaxRoundsLabel}"/>
+<Binding Path="SchemeScore.MaxRounds" />
+<Binding Source="{x:Static resources:AppResources.AverageRoundsLabel}"/>
+<Binding Path="SchemeScore.AverageRounds" />
+<Binding Source="{x:Static resources:AppResources.CountLabel}"/>
+<Binding Path="SchemeScore.Count" />
+<Binding Source="{x:Static resources:AppResources.WinsLabel}"/>
+<Binding Path="SchemeScore.Wins" />
+</MultiBinding>
+</Setter.Value>
+</Setter>
+</DataTrigger>
+</Style.Triggers>
+</Style>
+</Label.Style>
+</Label>
 </DataTemplate>
 </CollectionView.ItemTemplate>
 </CollectionView>

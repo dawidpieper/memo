@@ -22,7 +22,11 @@ await Navigation.PushAsync(g);
 }
 
 private async void OnHelpClicked(object sender, EventArgs e) {
-await Navigation.PushAsync(new HelpPage());
+await Navigation.PushAsync(new TutorialPage());
+}
+
+private async void OnInfoClicked(object sender, EventArgs e) {
+await Navigation.PushAsync(new InfoPage());
 }
 }
 

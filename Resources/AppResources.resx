@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutButton" xml:space="preserve">
+    <value>About AudioMemo</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AveragePointsLabel" xml:space="preserve">
+    <value>Average points</value>
+  </data>
+  <data name="AverageRoundsLabel" xml:space="preserve">
+    <value>Average rounds</value>
+  </data>
+  <data name="BirdsSoundScheme" xml:space="preserve">
+    <value>Birds</value>
+  </data>
+  <data name="BonusTimeAlert" xml:space="preserve">
+    <value>Bonus time!</value>
+  </data>
+  <data name="CardField" xml:space="preserve">
+    <value>Card</value>
+  </data>
+  <data name="CardPickedField" xml:space="preserve">
+    <value>Picked card</value>
+  </data>
+  <data name="CountLabel" xml:space="preserve">
+    <value>Games count</value>
+  </data>
+  <data name="DoAbortGameTitle" xml:space="preserve">
+    <value>Are you sure you want to abort this game?</value>
+  </data>
+  <data name="EmptyField" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="GameEndedLabel" xml:space="preserve">
+    <value>Game ended</value>
+  </data>
+  <data name="GameTitle" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="GameWillBeLostLabel" xml:space="preserve">
+    <value>This game will be lost.</value>
+  </data>
+  <data name="GithubButton" xml:space="preserve">
+    <value>AudioMemo on GitHub</value>
+  </data>
+  <data name="HelpButton" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="InstrumentsSoundScheme" xml:space="preserve">
+    <value>Instruments</value>
+  </data>
+  <data name="LicenseButton" xml:space="preserve">
+    <value>Show full license</value>
+  </data>
+  <data name="MaxPointsLabel" xml:space="preserve">
+    <value>Maximum points</value>
+  </data>
+  <data name="MaxRoundsLabel" xml:space="preserve">
+    <value>Maximum rounds</value>
+  </data>
+  <data name="NewGameButton" xml:space="preserve">
+    <value>New game</value>
+  </data>
+  <data name="NoButton" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="PianoSoundScheme" xml:space="preserve">
+    <value>Piano</value>
+  </data>
+  <data name="PointsLabel" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="RemainingCardsLabel" xml:space="preserve">
+    <value>Remaining cards</value>
+  </data>
+  <data name="RoundLabel" xml:space="preserve">
+    <value>Round</value>
+  </data>
+  <data name="SecondsAlert" xml:space="preserve">
+    <value>sec.</value>
+  </data>
+  <data name="SelectSoundSchemeTitle" xml:space="preserve">
+    <value>Select sound scheme</value>
+  </data>
+  <data name="TimeEndedAlert" xml:space="preserve">
+    <value>Time ended!</value>
+  </data>
+  <data name="TutorialEndHint" xml:space="preserve">
+    <value>It is over, congratulations!
+You are now ready to play!</value>
+  </data>
+  <data name="TutorialFirstPairHint" xml:space="preserve">
+    <value>That is what it is all about!
+Of course, there were only two cards here. It gets a bit more complicated when the board is bigger and there are more cards.
+The board is now three by three and there are four cards on it. Try it!</value>
+  </data>
+  <data name="TutorialFirstPickHint" xml:space="preserve">
+    <value>Now the card has been unveiled. The unveiling of each card causes some sound to be played. The object of the game is to find the second card that corresponds to the same sound.
+Only one card remains on the board, so this task should not be particularly challenging.</value>
+  </data>
+  <data name="TutorialStartHint" xml:space="preserve">
+    <value>Welcome to AudioMemo game!
+This game is based on the popular Memory game, which goal is pairing cards. In this case, the patterns have been replaced by sounds.
+The screen now displays a 2 by 2 board. Two of fields are empty, marked with a circle figure. The other two, containing squares, hide cards.
+Tip for screen reader users: When playing the game, it is advisable to move your finger around the screen instead of using the item by item navigation.
+When you tap on a card, the card is revealed. Try to do this now.</value>
+  </data>
+  <data name="TutorialThirdPairHint" xml:space="preserve">
+    <value>The whole challenge is to remember the positions of as many cards as possible.
+This pays off not only because it speeds up the collection of pairs and, well, time is limited, but also because two pairs collected in a row means bonus time.
+Let's turn up the difficulty level a little. Now the board is four by four, and there are 10 cards on it. Can you do it?</value>
+  </data>
+  <data name="TutorialTitle" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="WinsLabel" xml:space="preserve">
+    <value>Wins count</value>
+  </data>
+  <data name="WinToUnlockLabel" xml:space="preserve">
+    <value>Win on the previous scheme to unlock this one.</value>
+  </data>
+  <data name="YesButton" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>

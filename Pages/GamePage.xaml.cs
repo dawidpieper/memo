@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
 using static Memo.Player;
+using Memo.Resources;
 
 namespace Memo {
 
@@ -38,12 +39,12 @@ Points+=10;
 PlaySound("card_pair");
 if(LastSuccess && !e.IsLastCard) {
 RemainingTime+=15;
-SemanticScreenReader.Announce("Dodatkowy czas!");
+SemanticScreenReader.Announce(AppResources.BonusTimeAlert);
 }
 LastSuccess=true;
 if(e.IsLastCard) {
 LastSuccess=false;
-PlaySound("success");
+PlaySound("nextround");
 Points+=RemainingTime;
 NextRound(3);
 }
@@ -60,27 +61,26 @@ NextRound();
 public void Tick() {
 if(!Board.Paused) {
 --RemainingTime;
-if(RemainingTime>0 && RemainingTime%10==0) SemanticScreenReader.Announce(RemainingTime.ToString()+" sek.");
-PointsLabel.Text="Punkty: "+Points.ToString();
+if(RemainingTime>0 && RemainingTime%10==0)
+SemanticScreenReader.Announce(RemainingTime.ToString()+" "+AppResources.SecondsAlert);
+PointsLabel.Text=AppResources.PointsLabel+": "+Points.ToString();
 if(Board.RemainingCards==0)
 CardsLabel.Text="";
 else
-CardsLabel.Text="Pozostałe karty: "+Board.RemainingCards.ToString();
+CardsLabel.Text=AppResources.RemainingCardsLabel+": "+Board.RemainingCards.ToString();
 var sb = new StringBuilder();
-if(RemainingTime>60) {
-sb.Append(RemainingTime/60);
-sb.Append(" min. ");
-}
-sb.Append(RemainingTime%60);
-sb.Append(" sek. ");
+sb.Append((RemainingTime/60).ToString("00"));
+sb.Append(":");
+sb.Append((RemainingTime%60).ToString("00"));
 TimerLabel.Text=sb.ToString();
 ++Ticks;
 if(Ticks%2==0 && Board.IsPicked) PlaySound("card_picked");
 if(RemainingTime==0) {
 PlaySound("over");
-SemanticScreenReader.Announce("Koniec czasu!");
+SemanticScreenReader.Announce(AppResources.TimeEndedAlert);
 Board.Paused=true;
 Completed=true;
+Scores.AddScore(SoundsBase, Points, Round-1, false);
 }
 }
 }
@@ -96,7 +96,7 @@ StartRound(Round);
 }
 
 public void StartRound(int i) {
-RoundLabel.Text=$"Runda {i}";
+RoundLabel.Text=AppResources.RoundLabel+" "+i.ToString();
 switch(i) {
 case 0:
 case 1:
@@ -122,8 +122,11 @@ StartGame(5, 5, 8, 100);
 break;
 case 8:
 Board.Paused=true;
-RoundLabel.Text="Koniec gry";
+PlaySound("success");
+RoundLabel.Text=AppResources.GameEndedLabel;
+CardsLabel.Text="";
 Completed=true;
+Scores.AddScore(SoundsBase, Points, Round-1, true);
 break;
 }
 SemanticScreenReader.Announce(RoundLabel.Text);
@@ -148,7 +151,7 @@ protected override bool OnBackButtonPressed(){
 if(!Completed) {
 MainThread.BeginInvokeOnMainThread(async () => {
 Board.Paused=true;
-var r = await DisplayAlert("Czy przerwać grę?", "Ta rozgrywka zostanie utracona.", "Tak", "Nie");
+var r = await DisplayAlert(AppResources.DoAbortGameTitle, AppResources.GameWillBeLostLabel, AppResources.YesButton, AppResources.NoButton);
 Board.Paused=false;
 if(r) {
 base.OnBackButtonPressed();

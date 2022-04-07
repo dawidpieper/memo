@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Memo.Controls"
+             x:Class="Memo.InfoPage"
+xmlns:resources="clr-namespace:Memo.Resources"
+
+Title="{x:Static resources:AppResources.AboutTitle}"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+
+<Grid RowDefinitions="Auto,Auto,Auto">
+<Label Grid.Row="0" TextType="Html">
+<Label.Text>
+<![CDATA[
+<html>
+<body>
+<h1>AudioMemo 0.1</h1>
+<p>Copyright (&copy;) 2022 Dawid Pieper</p>
+<p>AudioMemo is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3. </p>
+<p>AudioMemo is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+</body>
+</html>
+]]>
+</Label.Text>
+</Label>
+
+<Button Grid.Row="1" Text="{x:Static resources:AppResources.LicenseButton}" Clicked="OnLicenseClicked" />
+
+<Button Grid.Row="2" Text="{x:Static resources:AppResources.GithubButton}" Clicked="OnGithubClicked" />
+</Grid>
+    </ScrollView>
+</ContentPage>
