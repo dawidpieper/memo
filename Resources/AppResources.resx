@@ -141,6 +141,12 @@
   <data name="CardPickedField" xml:space="preserve">
     <value>Picked card</value>
   </data>
+  <data name="ClearDataButton" xml:space="preserve">
+    <value>Clear game data</value>
+  </data>
+  <data name="ClearDataLabel" xml:space="preserve">
+    <value>All achieved scores will be lost. Are you sure you want to continue?</value>
+  </data>
   <data name="CountLabel" xml:space="preserve">
     <value>Games count</value>
   </data>
@@ -231,6 +237,9 @@ Let's turn up the difficulty level a little. Now the board is four by four, and 
   </data>
   <data name="TutorialTitle" xml:space="preserve">
     <value>Tutorial</value>
+  </data>
+  <data name="WarningTitle" xml:space="preserve">
+    <value>Warning</value>
   </data>
   <data name="WinsLabel" xml:space="preserve">
     <value>Wins count</value>
