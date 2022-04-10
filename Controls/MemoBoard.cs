@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Essentials;
 using Memo.Resources;
 
 namespace Memo.Controls {
@@ -96,9 +97,10 @@ for(int i=0; i<MemoWidth; ++i) {
 grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
 for(int j=0; j<MemoHeight; ++j) {
 if(i==0) grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
-var b = new Button();
+var b = new ImageButton();
 SemanticProperties.SetDescription(b, GetFieldLabel(i,j));
-b.ImageSource = GetFieldImage(i,j);
+b.Margin = new Thickness(20);
+b.Source = GetFieldImage(i,j);
 int x=i;
 int y=j;
 b.Clicked += (sender, e) => {
@@ -119,9 +121,13 @@ for(int i=0; i<MemoWidth; ++i)
 for(int j=0; j<MemoHeight; ++j)
 foreach(var c in grid.Children) {
 if(grid.GetRow(c)==i && grid.GetColumn(c)==j) {
-Button b = (Button)c;
+ImageButton b = (ImageButton)c;
+MainThread.BeginInvokeOnMainThread(() => {
+b.BatchBegin();
 SemanticProperties.SetDescription(b, GetFieldLabel(i,j));
-b.ImageSource = GetFieldImage(i,j);
+b.Source = GetFieldImage(i,j);
+b.BatchCommit();
+});
 }
 }
 }
