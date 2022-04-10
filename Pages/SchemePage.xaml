@@ -13,7 +13,7 @@ Title="{x:Static resources:AppResources.SelectSoundSchemeTitle}"
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
 <CollectionView
-ItemsLayout="VerticalGrid, 3"
+ItemsLayout="VerticalGrid, 2"
 SelectionMode="Single"
 x:Name="SoundsView"
 Grid.Row="0"

@@ -21,7 +21,7 @@ var sb = new StringBuilder();
 sb.Append("Score.");
 sb.Append(scheme);
 sb.Append(".Max");
-return (int)Preferences.Get(sb.ToString(), 0);
+return Preferences.Get(sb.ToString(), 0);
 }
 
 public static double GetAverageScore(string scheme) {
@@ -29,7 +29,7 @@ var sb = new StringBuilder();
 sb.Append("Score.");
 sb.Append(scheme);
 sb.Append(".Average");
-return (double)Preferences.Get(sb.ToString(), 0);
+return Preferences.Get(sb.ToString(), 0.0);
 }
 
 public static int GetMaxRounds(string scheme) {
@@ -37,7 +37,7 @@ var sb = new StringBuilder();
 sb.Append("Score.");
 sb.Append(scheme);
 sb.Append(".MaxRounds");
-return (int)Preferences.Get(sb.ToString(), 0);
+return Preferences.Get(sb.ToString(), 0);
 }
 
 public static double GetAverageRounds(string scheme) {
@@ -45,7 +45,7 @@ var sb = new StringBuilder();
 sb.Append("Score.");
 sb.Append(scheme);
 sb.Append(".AverageRounds");
-return (double)Preferences.Get(sb.ToString(), 0);
+return Preferences.Get(sb.ToString(), 0.0);
 }
 
 public static int GetCount(string scheme) {
@@ -53,7 +53,7 @@ var sb = new StringBuilder();
 sb.Append("Score.");
 sb.Append(scheme);
 sb.Append(".Count");
-return (int)Preferences.Get(sb.ToString(), 0);
+return Preferences.Get(sb.ToString(), 0);
 }
 
 public static int GetWins(string scheme) {
@@ -61,7 +61,7 @@ var sb = new StringBuilder();
 sb.Append("Score.");
 sb.Append(scheme);
 sb.Append(".Wins");
-return (int)Preferences.Get(sb.ToString(), 0);
+return Preferences.Get(sb.ToString(), 0);
 }
 
 public static Score GetScore(string scheme) {
