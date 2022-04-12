@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
+using Memo.Resources;
 
 namespace Memo {
 
@@ -18,5 +19,9 @@ private async void OnGithubClicked(object sender, EventArgs e) {
 await Launcher.OpenAsync("https://github.com/dawidpieper/memo");
 }
 
+private async void OnClearDataClicked(object sender, EventArgs e) {
+var r = await DisplayAlert(AppResources.WarningTitle, AppResources.ClearDataLabel, AppResources.YesButton, AppResources.NoButton);
+if(r) Preferences.Clear();
+}
 }
 }

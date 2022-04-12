@@ -36,8 +36,8 @@
 </PropertyGroup>
 
 <PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Debug'">
-<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
-<!-- <RuntimeIdentifier>ios-arm64</RuntimeIdentifier> -->
+<!-- <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier> -->
+<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 <!-- <CodesignKey>Apple Development: Dawid Pieper (9654BGWUZ7)</CodesignKey> -->
 <!-- <CodesignProvision>memodev</CodesignProvision> -->
 </PropertyGroup>
